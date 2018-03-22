@@ -5,6 +5,7 @@
 //  Created by Juan Manuel Moreno on 21/3/18.
 //  Copyright © 2018 uzupis. All rights reserved.
 //
+//  Cell de actividades para LUExpandableTableView
 
 import UIKit
 

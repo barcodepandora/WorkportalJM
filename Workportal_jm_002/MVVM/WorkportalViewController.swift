@@ -5,25 +5,28 @@
 //  Created by Juan Manuel Moreno on 21/3/18.
 //  Copyright © 2018 uzupis. All rights reserved.
 //
+//  VC de actividades que hace uso del pod LUExpandableTableView
 
 import UIKit
 import LUExpandableTableView
 
 class WorkportalViewController: UIViewController {
+
     // MARK: - Properties
     
-    private let expandableTableView = LUExpandableTableView()
+    private let expandableTableView = LUExpandableTableView() // expandable
     
-    private let cellReuseIdentifier = "MyCell"
+    private let cellReuseIdentifier = "MyCell" // características para registro de componentes
     private let sectionHeaderReuseIdentifier = "MySectionHeader"
 
-    var viewModel = WorkportalViewModel()
+    var viewModel = WorkportalViewModel() // Característica view model de acuerdo al patrñon MVVM
     
     // MARK: - ViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Inicializamos tabla expandable
         view.addSubview(expandableTableView)
         
         expandableTableView.register(WorkportalTableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -32,7 +35,8 @@ class WorkportalViewController: UIViewController {
         expandableTableView.expandableTableViewDataSource = self as! LUExpandableTableViewDataSource
         expandableTableView.expandableTableViewDelegate = self as! LUExpandableTableViewDelegate
         
-        showActivities()
+        // Cargamos actividades
+        populateInboxForDB()
     }
     
     override func viewDidLayoutSubviews() {
@@ -44,9 +48,12 @@ class WorkportalViewController: UIViewController {
     
     // MARK: - Business
     
-    func showActivities() {
+    /*
+     * Completa las actividades en persistencia
+     */
+    func populateInboxForDB() {
         
-        viewModel.getActivities()
+        viewModel.populateInboxForDB()
     }
 }
 
@@ -54,31 +61,52 @@ class WorkportalViewController: UIViewController {
 
 extension WorkportalViewController: LUExpandableTableViewDataSource {
     func numberOfSections(in expandableTableView: LUExpandableTableView) -> Int {
-        return 42
+        return 1
     }
     
     func expandableTableView(_ expandableTableView: LUExpandableTableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func expandableTableView(_ expandableTableView: LUExpandableTableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Registramos
         guard let cell = expandableTableView.dequeueReusableCell(withIdentifier: "MyCell") as? WorkportalTableViewCell else {
             assertionFailure("Cell shouldn't be nil")
             return UITableViewCell()
         }
         
-        cell.label.text = "Cell at row \(indexPath.row) section \(indexPath.section)"
+        print("Mostrando actividades")
+        
+        var inbox: NSMutableArray = viewModel.getActivities() as! NSMutableArray
+        var activity: NSMutableDictionary = inbox.object(at: indexPath.row) as! NSMutableDictionary
+        cell.label.text = activity.object(forKey: "desc") as! String
+//        cell.label.text = "Cell at row \(indexPath.row) section \(indexPath.section)"
         
         return cell
     }
     
     func expandableTableView(_ expandableTableView: LUExpandableTableView, sectionHeaderOfSection section: Int) -> LUExpandableTableViewSectionHeader {
+        
+        // Registramos
         guard let sectionHeader = expandableTableView.dequeueReusableHeaderFooterView(withIdentifier: "MySectionHeader") as? MyExpandableTableViewSectionHeader else {
             assertionFailure("Section header shouldn't be nil")
             return LUExpandableTableViewSectionHeader()
         }
 
-        sectionHeader.label.text = "Section \(section)"
+        // Categorias de actividades en inbox
+        switch section {
+            
+        case 0:
+            sectionHeader.label.text = "Disponible"
+        case 1:
+            sectionHeader.label.text = "Aceptada"
+        case 2:
+            sectionHeader.label.text = "Rechazada"
+        default:
+            sectionHeader.label.text = "No se"
+        }
+//        sectionHeader.label.text = "Section \(section)"
 
         return sectionHeader
     }

@@ -5,7 +5,8 @@
 //  Created by Juan Manuel Moreno on 21/3/18.
 //  Copyright © 2018 uzupis. All rights reserved.
 //
-//  TODO: *Corregir URL *Singleton *Asynchronous
+//  Experto en servicios [REST]
+//  TODO: *Asynchronous
 //
 
 import Foundation
@@ -14,15 +15,17 @@ import Reachability
 class WSDelegate {
     
     var jsonUrl = NSURL()
+    var url = "http://91acb418.ngrok.io/activities"
     
-    //  MARK: - Util
+    //  MARK: - Business
     
     /*
      * Consulta las actividades desde ws
      */
-    func consumeForActivities() -> NSMutableDictionary {
+    func consumeForActivities() -> NSMutableArray {
         
         var forest = NSMutableDictionary()
+        var inbox = NSMutableArray()
         
         // Evaluamos conectividad con framework cocoapods Reachability
         let networkReachability: Reachability = Reachability.forInternetConnection()
@@ -31,7 +34,7 @@ class WSDelegate {
             print("No internet connection")
         } else {
             
-            jsonUrl = NSURL(string: "https://api.myjson.com/bins/10yg1t")!
+            jsonUrl = NSURL(string: url)!
             let request: NSURLRequest = NSURLRequest.init(url: jsonUrl as URL)
             var response: URLResponse?
             let _: NSError?
@@ -40,11 +43,13 @@ class WSDelegate {
                 let urlData = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
                 let result: NSMutableDictionary = try JSONSerialization.jsonObject(with: urlData, options:JSONSerialization.ReadingOptions.mutableContainers) as! NSMutableDictionary
                 forest = result.mutableCopy() as! NSMutableDictionary
+                
+                // Aqui convertimos el dictionary en array
             } catch (let e) {
                 
                 print(e)
             }
         }
-        return forest
+        return inbox
     }    
 }

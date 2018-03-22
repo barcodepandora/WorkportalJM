@@ -5,18 +5,30 @@
 //  Created by Juan Manuel Moreno on 21/3/18.
 //  Copyright © 2018 uzupis. All rights reserved.
 //
+//  VM de actividades siguiendo el patron MVVM
 
 import Foundation
 
 class WorkportalViewModel {
     
-    var contentForClient: String = ""
-    var contentForDays: String = ""
-    var contentForDateFrom: String = ""
-    var contentForDateTo: String = ""
+    var inbox: NSMutableArray!
     
-    func getActivities() {
+    // MARK: - Business
     
-        let inbox = DataManager.instance.getActivities()
+    /*
+     * Completa las actividades
+     */
+    func populateInboxForDB() {
+        
+        DataManager.instance.populateInboxForDB()
+    }
+
+    /*
+     * Cosulta las actividades
+     */
+    func getActivities() -> NSMutableArray {
+    
+        inbox = DataManager.instance.getActivities()
+        return inbox
     }
 }

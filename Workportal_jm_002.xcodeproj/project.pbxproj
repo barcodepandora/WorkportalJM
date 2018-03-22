@@ -144,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				60BF7AEE206354D800EECB93 /* MyExpandableTableViewSectionHeader.swift */,
-				60BF7AF02063559C00EECB93 /* MyExpandableTableViewSectionHeader.xib */,
 				60BF7AE620634A0B00EECB93 /* WorkportalViewController.swift */,
 				60BF7AEA2063525400EECB93 /* WorkportalTableViewCell.swift */,
 				60BF7AF220635CEC00EECB93 /* WorkportalViewModel.swift */,
@@ -168,6 +167,7 @@
 			children = (
 				60BF7ACF206349F600EECB93 /* LaunchScreen.storyboard */,
 				60BF7AC7206349F600EECB93 /* Main.storyboard */,
+				60BF7AF02063559C00EECB93 /* MyExpandableTableViewSectionHeader.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";

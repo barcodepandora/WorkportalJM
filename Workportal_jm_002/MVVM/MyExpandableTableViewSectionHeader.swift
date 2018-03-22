@@ -5,11 +5,14 @@
 //  Created by Laurentiu Ungur on 24/11/2016.
 //  Copyright © 2016 Laurentiu Ungur. All rights reserved.
 //
+//  Encabezado desplegable de categorias en una tabla inspitado en Material Design
+//
 
 import UIKit
 import LUExpandableTableView
 
 final class MyExpandableTableViewSectionHeader: LUExpandableTableViewSectionHeader {
+    
     // MARK: - Properties
     
     @IBOutlet weak var expandCollapseButton: UIButton!
