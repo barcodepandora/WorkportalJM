@@ -18,7 +18,7 @@ class WSDelegate {
     //  MARK: - Util
     
     /*
-     * Consulta los colegios
+     * Consulta las actividades desde ws
      */
     func consumeForActivities() -> NSMutableDictionary {
         

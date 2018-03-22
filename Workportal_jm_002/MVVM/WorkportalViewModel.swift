@@ -17,10 +17,6 @@ class WorkportalViewModel {
     
     func getActivities() {
     
-//        VALIDAR CONEXION A INTERNET
-//        let wsDelegate = WSDelegate()
-//        wsDelegate.consumeForActivities()
-//        PERSISTIR
-//        ALISTAR PARA EL VC
+        let inbox = DataManager.instance.getActivities()
     }
 }
