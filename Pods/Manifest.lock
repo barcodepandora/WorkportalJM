@@ -1,0 +1,12 @@
+PODS:
+  - LUExpandableTableView (3.0.0)
+
+DEPENDENCIES:
+  - LUExpandableTableView (~> 3.0)
+
+SPEC CHECKSUMS:
+  LUExpandableTableView: 3282bf2de40af3fadd97095f9a4738185a261d6f
+
+PODFILE CHECKSUM: 0af06d81493fe20679f3319c50eb950a939a980d
+
+COCOAPODS: 1.4.0

@@ -1,0 +1,6 @@
+framework module Pods_Workportal_jm_002 {
+  umbrella header "Pods-Workportal_jm_002-umbrella.h"
+
+  export *
+  module * { export * }
+}
