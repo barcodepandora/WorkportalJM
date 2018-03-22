@@ -7,6 +7,7 @@ target 'Workportal_jm_002' do
 
   # Pods for Workportal_jm_002
   pod 'LUExpandableTableView', '~> 3.0'
+  pod 'Reachability', '~> 3.2'
 
   target 'Workportal_jm_002Tests' do
     inherit! :search_paths

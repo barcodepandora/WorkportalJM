@@ -17,6 +17,8 @@ class WorkportalViewController: UIViewController {
     private let cellReuseIdentifier = "MyCell"
     private let sectionHeaderReuseIdentifier = "MySectionHeader"
 
+    var viewModel = WorkportalViewModel()
+    
     // MARK: - ViewController
     
     override func viewDidLoad() {
@@ -29,6 +31,8 @@ class WorkportalViewController: UIViewController {
         
         expandableTableView.expandableTableViewDataSource = self as! LUExpandableTableViewDataSource
         expandableTableView.expandableTableViewDelegate = self as! LUExpandableTableViewDelegate
+        
+        showActivities()
     }
     
     override func viewDidLayoutSubviews() {
@@ -36,6 +40,13 @@ class WorkportalViewController: UIViewController {
         
         expandableTableView.frame = view.bounds
         expandableTableView.frame.origin.y += 20
+    }
+    
+    // MARK: - Business
+    
+    func showActivities() {
+        
+        viewModel.getActivities()
     }
 }
 

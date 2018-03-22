@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5335A46163F92500AFB311B65CDEDA7C"
-               BuildableName = "Pods_Workportal_jm_002.framework"
-               BlueprintName = "Pods-Workportal_jm_002"
+               BlueprintIdentifier = "E5ADB514B5F6FCBDFCB82D95ABFB5BE2"
+               BuildableName = "Reachability.framework"
+               BlueprintName = "Reachability"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,9 +47,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5335A46163F92500AFB311B65CDEDA7C"
-            BuildableName = "Pods_Workportal_jm_002.framework"
-            BlueprintName = "Pods-Workportal_jm_002"
+            BlueprintIdentifier = "E5ADB514B5F6FCBDFCB82D95ABFB5BE2"
+            BuildableName = "Reachability.framework"
+            BlueprintName = "Reachability"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

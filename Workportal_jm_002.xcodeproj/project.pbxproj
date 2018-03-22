@@ -21,6 +21,8 @@
 		60BF7AEB2063525400EECB93 /* WorkportalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF7AEA2063525400EECB93 /* WorkportalTableViewCell.swift */; };
 		60BF7AEF206354D800EECB93 /* MyExpandableTableViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF7AEE206354D800EECB93 /* MyExpandableTableViewSectionHeader.swift */; };
 		60BF7AF12063559C00EECB93 /* MyExpandableTableViewSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60BF7AF02063559C00EECB93 /* MyExpandableTableViewSectionHeader.xib */; };
+		60BF7AF320635CEC00EECB93 /* WorkportalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF7AF220635CEC00EECB93 /* WorkportalViewModel.swift */; };
+		60BF7AF52063610400EECB93 /* WSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF7AF42063610400EECB93 /* WSDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		60BF7AEA2063525400EECB93 /* WorkportalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkportalTableViewCell.swift; sourceTree = "<group>"; };
 		60BF7AEE206354D800EECB93 /* MyExpandableTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExpandableTableViewSectionHeader.swift; sourceTree = "<group>"; };
 		60BF7AF02063559C00EECB93 /* MyExpandableTableViewSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyExpandableTableViewSectionHeader.xib; sourceTree = "<group>"; };
+		60BF7AF220635CEC00EECB93 /* WorkportalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkportalViewModel.swift; sourceTree = "<group>"; };
+		60BF7AF42063610400EECB93 /* WSDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSDelegate.swift; sourceTree = "<group>"; };
 		F4488E591B7DF173372455E7 /* Pods-Workportal_jm_002.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workportal_jm_002.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Workportal_jm_002/Pods-Workportal_jm_002.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,17 +116,14 @@
 		60BF7AC2206349F600EECB93 /* Workportal_jm_002 */ = {
 			isa = PBXGroup;
 			children = (
+				60BF7AF9206362C400EECB93 /* Storyboard */,
+				60BF7AF82063629A00EECB93 /* Data */,
+				60BF7AF72063629200EECB93 /* WS */,
+				60BF7AF62063628100EECB93 /* MVVM */,
 				60BF7AC3206349F600EECB93 /* AppDelegate.swift */,
 				60BF7AC5206349F600EECB93 /* ViewController.swift */,
-				60BF7AC7206349F600EECB93 /* Main.storyboard */,
-				60BF7AEE206354D800EECB93 /* MyExpandableTableViewSectionHeader.swift */,
-				60BF7AF02063559C00EECB93 /* MyExpandableTableViewSectionHeader.xib */,
-				60BF7AE620634A0B00EECB93 /* WorkportalViewController.swift */,
-				60BF7AEA2063525400EECB93 /* WorkportalTableViewCell.swift */,
 				60BF7ACD206349F600EECB93 /* Assets.xcassets */,
-				60BF7ACF206349F600EECB93 /* LaunchScreen.storyboard */,
 				60BF7AD2206349F600EECB93 /* Info.plist */,
-				60BF7ACA206349F600EECB93 /* Workportal_jm_002.xcdatamodeld */,
 			);
 			path = Workportal_jm_002;
 			sourceTree = "<group>";
@@ -134,6 +135,43 @@
 				60BF7ADD206349F600EECB93 /* Info.plist */,
 			);
 			path = Workportal_jm_002Tests;
+			sourceTree = "<group>";
+		};
+		60BF7AF62063628100EECB93 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				60BF7AEE206354D800EECB93 /* MyExpandableTableViewSectionHeader.swift */,
+				60BF7AF02063559C00EECB93 /* MyExpandableTableViewSectionHeader.xib */,
+				60BF7AE620634A0B00EECB93 /* WorkportalViewController.swift */,
+				60BF7AEA2063525400EECB93 /* WorkportalTableViewCell.swift */,
+				60BF7AF220635CEC00EECB93 /* WorkportalViewModel.swift */,
+			);
+			path = MVVM;
+			sourceTree = "<group>";
+		};
+		60BF7AF72063629200EECB93 /* WS */ = {
+			isa = PBXGroup;
+			children = (
+				60BF7AF42063610400EECB93 /* WSDelegate.swift */,
+			);
+			path = WS;
+			sourceTree = "<group>";
+		};
+		60BF7AF82063629A00EECB93 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				60BF7ACA206349F600EECB93 /* Workportal_jm_002.xcdatamodeld */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		60BF7AF9206362C400EECB93 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				60BF7ACF206349F600EECB93 /* LaunchScreen.storyboard */,
+				60BF7AC7206349F600EECB93 /* Main.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B539C50AD2EE8BEDCDC494D5 /* Pods */ = {
@@ -327,10 +365,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Workportal_jm_002/Pods-Workportal_jm_002-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LUExpandableTableView/LUExpandableTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LUExpandableTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -359,10 +399,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60BF7AF52063610400EECB93 /* WSDelegate.swift in Sources */,
 				60BF7AC6206349F600EECB93 /* ViewController.swift in Sources */,
 				60BF7AE720634A0B00EECB93 /* WorkportalViewController.swift in Sources */,
 				60BF7ACC206349F600EECB93 /* Workportal_jm_002.xcdatamodeld in Sources */,
 				60BF7AEB2063525400EECB93 /* WorkportalTableViewCell.swift in Sources */,
+				60BF7AF320635CEC00EECB93 /* WorkportalViewModel.swift in Sources */,
 				60BF7AEF206354D800EECB93 /* MyExpandableTableViewSectionHeader.swift in Sources */,
 				60BF7AC4206349F600EECB93 /* AppDelegate.swift in Sources */,
 			);
